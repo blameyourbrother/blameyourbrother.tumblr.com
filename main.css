@@ -3245,7 +3245,7 @@ body{overflow-y:scroll}
   border-bottom: 1px solid #c0c2c5;
 }
 
-#pager #next a, #pager #previous a {
+#pager #next a, #pager #prev a {
   color: #040b19;
   text-decoration: none;
   text-transform: uppercase;
@@ -3255,7 +3255,7 @@ body{overflow-y:scroll}
   float: right;
 }
 
-#pager #previous {
+#pager #prev {
   float: left;
 }
 
