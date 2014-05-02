@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <!-- DEFAULT VARIABLES -->
+  <meta name="color:Background" content="#ffffff">
+  <meta name="image:Background" content="">
+  <meta name="font:Body" content="Arial">
+  <meta name="text:Disqus Shortname" content="">
+  <meta charset="utf-8">
+  <title>{Title}{block:PostSummary} &mdash; {PostSummary}{/block:PostSummary}</title>
+  {block:Description}<meta name="description" content="{MetaDescription}">{/block:Description}
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="author" content="Blame Your Brother">
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+  <link rel="shortcut icon" href="http://blameyourbrother.com/favicon.ico">
+  <link rel="stylesheet" href="https://dl.dropboxusercontent.com/u/3264184/blameyourbrother.com/css/main.css">
+  <link rel="alternate" type="application/rss+xml" href="{RSS}" />
+</head>
+<body class="blog {block:IndexPage}home{/block:IndexPage}{block:PermalinkPage}post {block:PostTitle}{PlaintextPostTitle}{/block:PostTitle}{/block:PermalinkPage}">
+  <div id="site-col">
+    <div id="header" class="container-fluid">
+      <div class="row">
+        <nav class="col-md-8 col-sm-8 col-md-push-4 col-sm-push-4">
+          <ul>
+            <li class="work"><a href="http://blameyourbrother.com/index.html">Work</a></li>
+            <li class="contact"><a href="http://blameyourbrother.com/contact.html">Contact</a></li>
+            <li class="about"><a href="http://blameyourbrother.com/about.html">About</a></li>
+            <li class="reel"><a href="http://blameyourbrother.com/reel.html">Reel</a></li>
+            <li class="blog"><a href="http://blameyourbrother.comhttp://blameyourbrother.tumblr.com" target="byb_blog">Blog</a></li>
+          </ul>
+          <h2 class="visible-xs">Menu</h2>
+        </nav>
+        <div class="col-md-4 col-sm-4 col-md-pull-8 col-sm-pull-8">
+          <div class="logo">
+            <h1>Blame Your Brother Creative Workshop</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main id="main" role="main" class="clearfix">
+      <section id="posts">
+        {block:IndexPage}
+        {block:Posts}
+        <article class="post">
+          {block:Text}
+          {block:Title}
+          <h2>{Title}</h2>
+          {/block:Title}
+          {block:Date}
+          <p class="date">{Month} {DayOfMonth}, {Year} at {12Hour}:{Minutes} {AmPm}</p>
+          {/block:Date}
+          {Body}
+          {/block:Text}
+          <p class="links"><a href="{Permalink}">Permalink</a>{block:IfDisqusShortname} | <a class="dsq-comment-count" href="{Permalink}#disqus_thread">Comments</a>{/block:IfDisqusShortname}</p>
+        </article>
+        {/block:Posts}
+        {block:Pagination}
+        <nav id="pager">
+          <ol class="clearfix">
+            {block:PreviousPage}<li id="prev"><a href="{PreviousPage}">Previous</a></li>{/block:PreviousPage}
+            {block:NextPage}<li id="next"><a href="{NextPage}">Next</a></li>{/block:NextPage}
+          </ol>
+        </nav>
+        {/block:Pagination}
+        {/block:IndexPage}
+        {block:PermalinkPage}
+        {block:Posts}
+        <article class="post">
+          {block:PostTitle}
+          <h2>{PostTitle}</h2>
+          {block:Date}
+          <p class="date">{Month} {DayOfMonth}, {Year} at {12Hour}:{Minutes} {AmPm}</p>
+          {/block:Date}
+          {/block:PostTitle}
+          {block:Text}
+          {Body}
+          {/block:Text}
+          {block:IfDisqusShortname}
+          <div id="disqus_thread"></div>
+          <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript={text:Disqus Shortname}">comments powered by Disqus.</a></noscript>
+          {/block:IfDisqusShortname}
+        </article>
+        {/block:Posts}
+        {/block:PermalinkPage}
+      </section>
+    </main>
+    <div id="footer" class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="social-links footer-item">
+            <li class="twitter"><a href="https://twitter.com/BlameYourBro">Twitter</a></li>
+            <li class="facebook"><a href="https://www.facebook.com/blameyourbrother">Facebook</a></li>
+            <li class="instagram"><a href="http://instagram.com/blameyourbrother/">Instagram</a></li>
+            <li class="vimeo"><a href="http://vimeo.com/user4536604">Vimeo</a></li>
+          </ul>
+          <div class="contact-info footer-item">
+            <div>P: 416.861.0718</div>
+            <div>E: <a href="mailto:geoff@blameyourbrother.com">geoff@blameyourbrother.com</a></div>
+          </div>
+          <div class="address footer-item">
+            <div><a href="http://blameyourbrother.com/contact.html">96 Spadina - 5th Floor - 507</a></div>
+            <div><a href="http://blameyourbrother.com/contact.html">Toronto, ON M5V 2J6</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {block:PermalinkPage}
+  {block:IfDisqusShortname}
+  <script>
+    /**
+      * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+      */
+    var disqus_url = "{Permalink}",
+    disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";
+    (function() {
+     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+     dsq.src = 'http://{text:Disqus Shortname}.disqus.com/embed.js';
+     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  {/block:IfDisqusShortname}
+  {/block:PermalinkPage}
+  {block:IndexPage}
+  {block:IfDisqusShortname}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+  <script type="text/javascript">
+  var disqus_shortname = '{text:Disqus Shortname}';
+  (function () {
+    var s = document.createElement('script'); s.async = true;
+    s.src = 'http://{text:Disqus Shortname}.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+
+    // Do some custom Disqus rendering (don't like seeing "0 Comments and 0 Reactions")
+    var cleanCommentLinks = function () {
+      $(".dsq-comment-count").each(function (index) {
+        var $el = $(this);
+
+        ($el.text() === "0 Comments and 0 Reactions") && $el.text("Comments");
+      });
+    };
+    window.setTimeout(function () { cleanCommentLinks(); }, 500);
+  }());
+  </script>
+  {/block:IfDisqusShortname}
+  {/block:IndexPage}
+</body>
+</html>
