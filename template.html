@@ -48,9 +48,11 @@
           <h2>{Title}</h2>
           {/block:Title}
           {block:Date}
-          <p class="date">{Month} {DayOfMonth}, {Year} at {12Hour}:{Minutes} {AmPm}</p>
+          <p class="date">{Month} {DayOfMonth}, {Year}</p>
           {/block:Date}
+          <div class="post-body">
           {Body}
+          </div>
           {/block:Text}
           <p class="links"><a href="{Permalink}">Permalink</a>{block:IfDisqusShortname} | <a class="dsq-comment-count" href="{Permalink}#disqus_thread">Comments</a>{/block:IfDisqusShortname}</p>
         </article>
